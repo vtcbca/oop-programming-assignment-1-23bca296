@@ -6,12 +6,6 @@ class employee
 	int eid,salary;
 	char ename[20],dept[20];
 	employee(int id,char name,char dept,int sal);
-	{
-		eid=id;
-		ename=name;
-		dept=dep;
-		salary=sal;
-	}
 // method to print employee details
 	void printemp()
 	{
@@ -21,14 +15,13 @@ class employee
 		cout<<"enter salary:"<<salary;
 	}
 //getter method for employee name
-	string getname()
+	char getname()
 	{
 		return ename;
 	}
 };
-int main() {
+void main() {
     // Input 5 employee data using constructor
-    Employee employees[5];
     for (int i = 0; i < 5; i++) {
 	int id;
 	string name, department;
@@ -42,21 +35,19 @@ int main() {
 	cin >> department;
 	cout << "Salary: ";
 	cin >> salary;
-	employees[i] = Employee(id, name, department, salary);
     }
 
     // Print employee data using constructor
-    for (int i = 0; i < 5; i++) {
+    for (int a = 0; a < 5; a++) {
 	cout << "Employee " << i + 1 << " details:" << endl;
-	employees[i].printEmployee();
 	cout << endl;
     }
 
     // Implement searching employee record based on employee name
-    string searchName;
+    char searchName;
     cout << "Enter employee name to search: ";
     cin >> searchName;
-    for (int i = 0; i < 5; i++) {
+    for (int l = 0; l < 5; l++) {
 	if (employees[i].getName() == searchName) {
 	    cout << "Employee found:" << endl;
 	    employees[i].printEmployee();
@@ -64,6 +55,5 @@ int main() {
 	}
     }
 
-    return 0;
+    getch();
 }
-
